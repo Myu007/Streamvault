@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0e0e0e;
+      --card: #161616;
+      --border: #2a2a2a;
+      --text: #f0ece4;
+      --muted: #6b6560;
+      --accent: #c9a96e;
+      --accent-dim: rgba(201, 169, 110, 0.12);
+      --error: #e07070;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(201,169,110,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(201,169,110,0.04) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 52px 48px 44px;
+      width: 100%;
+      max-width: 400px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .lock-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(201,169,110,0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      font-size: 20px;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 13.5px;
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 36px;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .input-wrap {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    input[type="password"], input[type="text"] {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 13px 44px 13px 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      letter-spacing: 2px;
+    }
+
+    input::placeholder { letter-spacing: 0; color: var(--muted); }
+
+    input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+
+    input.error {
+      border-color: var(--error);
+      box-shadow: 0 0 0 3px rgba(224,112,112,0.1);
+      animation: shake 0.35s ease;
+    }
+
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      25%      { transform: translateX(-6px); }
+      75%      { transform: translateX(6px); }
+    }
+
+    .toggle-pw {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 16px;
+      user-select: none;
+      transition: color 0.2s;
+    }
+    .toggle-pw:hover { color: var(--accent); }
+
+    .error-msg {
+      font-size: 12.5px;
+      color: var(--error);
+      margin-top: -16px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .error-msg.visible { display: block; }
+
+    button {
+      width: 100%;
+      background: var(--accent);
+      color: #0e0e0e;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14.5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+    button:hover  { opacity: 0.9; }
+    button:active { transform: scale(0.98); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="lock-icon">🔒</div>
+    <h1>Private Access</h1>
+    <p class="subtitle">Enter the password to continue.</p>
+
+    <label for="pw">Password</label>
+    <div class="input-wrap">
+      <input id="pw" type="password" placeholder="Enter password" autofocus />
+      <span class="toggle-pw" onclick="togglePw()">👁</span>
+    </div>
+    <p class="error-msg" id="err">Incorrect password. Try again.</p>
+
+    <button id="btn" onclick="login()">Enter →</button>
+  </div>
+
+  <script>
+    async function login() {
+      const input = document.getElementById('pw');
+      const err   = document.getElementById('err');
+      const btn   = document.getElementById('btn');
+
+      input.classList.remove('error');
+      err.classList.remove('visible');
+      btn.disabled = true;
+      btn.textContent = 'Checking...';
+
+      try {
+        const res = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password: input.value })
+        });
+
+        const data = await res.json();
+
+        if (data.ok) {
+          btn.textContent = '✓ Unlocked';
+          setTimeout(() => window.location.replace('/home'), 300);
+        } else {
+          input.classList.add('error');
+          err.classList.add('visible');
+          input.value = '';
+          input.focus();
+          btn.disabled = false;
+          btn.textContent = 'Enter →';
+        }
+      } catch (e) {
+        err.textContent = 'Something went wrong. Try again.';
+        err.classList.add('visible');
+        btn.disabled = false;
+        btn.textContent = 'Enter →';
+      }
+    }
+
+    function togglePw() {
+      const input = document.getElementById('pw');
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
+
+    document.getElementById('pw').addEventListener('keydown', e => {
+      if (e.key === 'Enter') login();
+    });
+  </script>
+</body>
+</html>
