@@ -74,7 +74,6 @@ header{
   cursor:pointer;user-select:none;flex-shrink:0;
 }
 
-/* search */
 .search-wrap{position:relative;flex:1;max-width:460px}
 .search-wrap input{
   width:100%;background:rgba(255,255,255,.06);
@@ -108,7 +107,6 @@ header{
 .sr-badge.movie{background:rgba(230,57,70,.18);color:var(--accent)}
 .sr-badge.tv{background:rgba(244,162,97,.15);color:var(--gold)}
 
-/* desktop tabs */
 nav.tabs{display:flex;gap:.15rem}
 .tab-btn{background:none;border:none;color:var(--text2);font-family:inherit;font-size:.8rem;font-weight:500;padding:.38rem .75rem;border-radius:8px;cursor:pointer;transition:all .18s;white-space:nowrap}
 .tab-btn:hover{color:var(--text);background:rgba(255,255,255,.07)}
@@ -138,7 +136,6 @@ nav.tabs{display:flex;gap:.15rem}
     0 -1px 0 rgba(0,0,0,.25) inset;
   width:auto;
   max-width:calc(100vw - 32px);
-  /* Always fixed, never in flow */
   align-items:center;
 }
 [data-theme="light"] .pill-nav{
@@ -205,11 +202,9 @@ nav.tabs{display:flex;gap:.15rem}
 /* ═══════════ MAIN ═══════════ */
 main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 
-/* section */
 .shd{display:flex;align-items:center;justify-content:space-between;margin:2.3rem 0 1rem}
 .stitle{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:1.5px}
 
-/* card row */
 .crow{display:flex;gap:.8rem;overflow-x:auto;padding-bottom:.7rem;scroll-snap-type:x mandatory;-ms-overflow-style:none;scrollbar-width:none}
 .crow::-webkit-scrollbar{display:none}
 
@@ -238,7 +233,6 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 .ctitle{font-size:.76rem;font-weight:500;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cyear{font-size:.67rem;color:var(--text2);margin-top:1px}
 
-/* wide card */
 .wcard{flex-shrink:0;width:255px;cursor:pointer;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;scroll-snap-align:start;position:relative;transition:transform .24s cubic-bezier(.34,1.4,.64,1)}
 .wcard:hover{transform:translateY(-4px) scale(1.01)}
 .wcard img{width:100%;height:100%;object-fit:cover;transition:transform .32s}
@@ -247,7 +241,6 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 .wtitle{font-weight:600;font-size:.78rem}
 .wmeta{font-size:.67rem;color:var(--text2);margin-top:2px}
 
-/* grid */
 .mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.8rem}
 
 /* ═══════════ FILTERS ═══════════ */
@@ -263,7 +256,6 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 .fapply{background:var(--accent);color:#fff;border:none;font-family:inherit;font-size:.76rem;font-weight:600;padding:.4rem 1rem;border-radius:8px;cursor:pointer;transition:all .2s;white-space:nowrap;align-self:flex-end;box-shadow:0 3px 12px var(--accentglow)}
 .fapply:hover{transform:translateY(-1px);box-shadow:0 5px 16px var(--accentglow)}
 
-/* genre pills */
 .grow{display:flex;gap:.38rem;overflow-x:auto;padding-bottom:.4rem;margin-bottom:.75rem;scrollbar-width:none}
 .grow::-webkit-scrollbar{display:none}
 .gp{flex-shrink:0;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text2);font-family:inherit;font-size:.72rem;padding:.33rem .85rem;border-radius:999px;cursor:pointer;transition:all .18s;font-weight:500}
@@ -300,7 +292,6 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 .mbtn:hover{background:rgba(255,255,255,.13);transform:translateY(-1px)}
 .mbtn.saved{color:var(--gold);border-color:rgba(244,162,97,.32);background:rgba(244,162,97,.07)}
 
-/* cast */
 .castlbl{font-size:.66rem;font-weight:600;color:var(--text2);letter-spacing:.7px;text-transform:uppercase;margin-bottom:.58rem}
 .castrow{display:flex;gap:.6rem;overflow-x:auto;scrollbar-width:none;padding-bottom:.3rem}
 .castrow::-webkit-scrollbar{display:none}
@@ -316,7 +307,6 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 .phead{padding:.6rem .9rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:.38rem}
 .plbl{font-size:.67rem;font-weight:700;color:var(--text2);letter-spacing:.6px;text-transform:uppercase}
 
-/* source buttons with language tags */
 .srcwrap{display:flex;gap:.28rem;flex-wrap:wrap;align-items:center}
 .srcbtn{
   display:inline-flex;align-items:center;gap:.3rem;
@@ -336,7 +326,6 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 .src-lang-dot.active-src{background:rgba(255,255,255,.25);color:#fff}
 .srcbtn.active .src-lang-dot{background:rgba(255,255,255,.25);color:#fff}
 
-/* open externally btn */
 .ext-btn{display:inline-flex;align-items:center;gap:.28rem;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text2);font-family:inherit;font-size:.64rem;padding:.24rem .55rem;border-radius:6px;cursor:pointer;transition:all .18s;text-decoration:none;white-space:nowrap}
 .ext-btn:hover{color:var(--text);background:rgba(255,255,255,.1);border-color:var(--border2)}
 #adShieldBadge{font-weight:600;letter-spacing:.2px;transition:all .2s}
@@ -348,14 +337,12 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 .spin{width:34px;height:34px;border:2.5px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin .75s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* language info banner */
 .lang-banner{padding:.45rem .9rem;border-bottom:1px solid var(--border);background:rgba(244,162,97,.04);display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;font-size:.7rem;color:var(--text2)}
 .lang-banner-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;box-shadow:0 0 5px var(--goldglow)}
 .lang-spoken-chips{display:flex;gap:.28rem;flex-wrap:wrap}
 .lchip{font-size:.64rem;padding:1px 7px;border-radius:4px;font-weight:600;background:rgba(255,255,255,.07);color:var(--text2);border:1px solid var(--border)}
 .lchip.hi{background:rgba(244,162,97,.12);color:var(--gold);border-color:rgba(244,162,97,.22)}
 
-/* episode selector */
 .epsel{padding:.68rem .9rem;border-top:1px solid var(--border)}
 .eptop{display:flex;align-items:center;justify-content:space-between;margin-bottom:.48rem;flex-wrap:wrap;gap:.35rem}
 .eplbl{font-size:.66rem;font-weight:600;color:var(--text2);letter-spacing:.6px;text-transform:uppercase}
@@ -368,7 +355,6 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 .epbtn.active{background:var(--accent);border-color:var(--accent);color:#fff}
 .epbtn.watched::after{content:'';position:absolute;bottom:2px;right:2px;width:4px;height:4px;border-radius:50%;background:var(--gold)}
 
-/* subtitle row */
 .subrow{padding:.55rem .9rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
 .sublbl{font-size:.66rem;font-weight:600;color:var(--text2);letter-spacing:.6px;text-transform:uppercase}
 .subsel{background:rgba(255,255,255,.07);border:1px solid var(--border);color:var(--text);font-family:inherit;font-size:.73rem;padding:.26rem .6rem;border-radius:6px;cursor:pointer;outline:none}
@@ -383,7 +369,6 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 .tclose:hover{background:var(--accent)}
 .tframe{width:100%;aspect-ratio:16/9;border:none;border-radius:14px}
 
-/* cw row */
 .cwitem{flex-shrink:0;width:185px;cursor:pointer;border-radius:var(--r);overflow:hidden;position:relative;scroll-snap-align:start;transition:transform .24s cubic-bezier(.34,1.4,.64,1)}
 .cwitem:hover{transform:translateY(-4px) scale(1.01)}
 .cwitem img{width:100%;aspect-ratio:16/9;object-fit:cover}
@@ -394,7 +379,6 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 .cwdel{position:absolute;top:.35rem;right:.35rem;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);border:none;border-radius:50%;width:22px;height:22px;font-size:.6rem;cursor:pointer;color:var(--text2);display:none;align-items:center;justify-content:center}
 .cwitem:hover .cwdel{display:flex}
 
-/* person */
 .pbody{padding:1.4rem}
 .phead2{display:flex;gap:1rem;margin-bottom:1.1rem}
 .pimg{width:86px;height:86px;border-radius:50%;object-fit:cover;border:2px solid var(--border2);flex-shrink:0}
@@ -402,11 +386,9 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 .psub{font-size:.77rem;color:var(--text2);margin-top:.2rem}
 .pbio{font-size:.82rem;color:rgba(238,240,246,.7);line-height:1.65;margin-bottom:1rem;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
 
-/* watchlist */
 .wlempty{text-align:center;padding:4rem 1rem;color:var(--text2)}
 .wlicon{font-size:2.5rem;margin-bottom:.7rem;opacity:.45}
 
-/* theme menu */
 .tmenu{position:absolute;top:calc(100% + 8px);right:0;background:var(--glass);backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);border:1px solid var(--glassborder);border-radius:12px;overflow:hidden;z-index:999;box-shadow:var(--shadow);min-width:145px;opacity:0;transform:translateY(-6px) scale(.96);pointer-events:none;transition:all .18s cubic-bezier(.34,1.4,.64,1)}
 .tmenu.open{opacity:1;transform:none;pointer-events:all}
 .topt{display:flex;align-items:center;gap:.58rem;padding:.58rem .9rem;cursor:pointer;font-size:.78rem;transition:background .14s}
@@ -414,22 +396,19 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 .topt.active{color:var(--accent)}
 .tdot{width:11px;height:11px;border-radius:50%;flex-shrink:0}
 
-/* toast */
 #toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%) translateY(14px);background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glassborder);border-radius:999px;padding:.52rem 1.3rem;font-size:.78rem;z-index:9999;opacity:0;transition:all .26s cubic-bezier(.34,1.4,.64,1);pointer-events:none;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.32)}
 #toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 
-/* skeleton */
 .skeleton{background:linear-gradient(90deg,var(--bg3) 25%,var(--bg2) 50%,var(--bg3) 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:var(--r)}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 .skcard{width:140px;flex-shrink:0}
 .skpost{aspect-ratio:2/3;border-radius:var(--r)}
 .skline{height:.62rem;border-radius:4px;margin-top:.42rem}
 
-/* page anim */
 .pfade{animation:pfade .28s ease}
 @keyframes pfade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
 
-/* ═══════════ RESPONSIVE -- TABLET ═══════════ */
+/* ═══════════ RESPONSIVE ═══════════ */
 @media(min-width:681px) and (max-width:1024px){
   .pill-nav{display:none!important}
   nav.tabs{display:flex}
@@ -440,8 +419,6 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
   .hero-content{max-width:60%}
   .modal{max-width:700px}
 }
-
-/* ═══════════ RESPONSIVE -- DESKTOP ═══════════ */
 @media(min-width:1025px){
   .pill-nav{display:none!important}
   nav.tabs{display:flex}
@@ -455,8 +432,6 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
   .modal{max-width:900px}
   .mbg{height:300px}
 }
-
-/* ═══════════ RESPONSIVE -- MOBILE ═══════════ */
 @media(max-width:680px){
   header{padding:0 .9rem;gap:.6rem;height:54px}
   .logo{font-size:1.38rem}
@@ -560,20 +535,16 @@ main{padding:0 1.5rem 5rem;position:relative;z-index:1}
 
 <script>
 // ════════════════════════════════════
-// CONFIG — Keys are hidden server-side
-// All TMDB calls go through /api/tmdb
+// CONFIG
 // ════════════════════════════════════
 const IMG = "https://image.tmdb.org/t/p/";
-
-// ════════════════════════════════════
-// SOURCES -- no sandbox, language tags shown
-// ════════════════════════════════════
 const LANG_MAP = {en:'EN',hi:'HI',ko:'KO',ja:'JA',es:'ES',fr:'FR',zh:'ZH',de:'DE',ar:'AR',ta:'TA',te:'TE',ml:'ML'};
+const PLACEHOLDER = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
 
 const SOURCES = [
   {
     id:'vidlink', label:'VidLink', ql:'HD',
-    langs:['en','hi','ko','ja','es','fr'],  // supports multi-language/subs
+    langs:['en','hi','ko','ja','es','fr'],
     fn:(id,t,s,e,lang)=>{
       const base = t==='tv'?`https://vidlink.pro/tv/${id}/${s}/${e}`:`https://vidlink.pro/movie/${id}`;
       return base+`?autoplay=true&primaryColor=e63946${lang?'&sub_lang='+lang:''}`;
@@ -586,7 +557,7 @@ const SOURCES = [
   },
   {
     id:'autoembed', label:'AutoEmbed', ql:'HD',
-    langs:['en','hi'],  // has Bollywood dual audio Hindi content
+    langs:['en','hi'],
     fn:(id,t,s,e)=>t==='tv'?`https://player.autoembed.cc/embed/tv/${id}/${s}/${e}`:`https://player.autoembed.cc/embed/movie/${id}`
   },
   {
@@ -596,7 +567,7 @@ const SOURCES = [
   },
   {
     id:'letsembed', label:'LetsEmbed', ql:'HD',
-    langs:['en','hi','ko','es','fr','de','ja','zh','ar','pt'],  // 50+ subtitle languages
+    langs:['en','hi','ko','es','fr','de','ja','zh','ar','pt'],
     fn:(id,t,s,e)=>t==='tv'?`https://letsembed.cc/embed/tv/?id=${id}/${s}/${e}`:`https://letsembed.cc/embed/movie/?id=${id}`
   },
   {
@@ -642,12 +613,11 @@ let imdbCache={},apiCache={};
 let curSubLang='';
 
 // ════════════════════════════════════
-// API
+// API & HELPERS
 // ════════════════════════════════════
 async function api(path,params=''){
   const key=path+params;
   if(apiCache[key]) return apiCache[key];
-  // All requests go through our secure Vercel proxy — keys never exposed
   const url=`/api/tmdb?path=${encodeURIComponent(path)}${params?'&params='+encodeURIComponent(params.replace(/^&/,'')):''}`;
   const r=await fetch(url);
   if(!r.ok) throw new Error(`API error ${r.status}`);
@@ -663,21 +633,15 @@ async function loadGenres(){
 }
 function gnames(ids,type){return(ids||[]).slice(0,3).map(id=>genres[type][id]).filter(Boolean)}
 
-// Get spoken languages from TMDB details
 function getSpokenLangs(details){
   const langs=(details.spoken_languages||[]).map(l=>l.iso_639_1).filter(Boolean);
-  // Also include original_language
   if(details.original_language&&!langs.includes(details.original_language)) langs.unshift(details.original_language);
   return [...new Set(langs)];
 }
 
-// Language display name
 const LANG_NAMES={en:'English',hi:'Hindi',ko:'Korean',ja:'Japanese',es:'Spanish',fr:'French',zh:'Chinese',de:'German',ar:'Arabic',ta:'Tamil',te:'Telugu',ml:'Malayalam',pt:'Portuguese',tr:'Turkish',it:'Italian',ru:'Russian',pl:'Polish',nl:'Dutch'};
 function langName(code){return LANG_NAMES[code]||code.toUpperCase()}
 
-// ════════════════════════════════════
-// IMDB
-// ════════════════════════════════════
 async function getImdb(id,type){
   if(imdbCache[id]!==undefined) return imdbCache[id];
   try{
@@ -738,14 +702,13 @@ function buildDots(){
 }
 
 // ════════════════════════════════════
-// TABS
+// NAVIGATION
 // ════════════════════════════════════
 function switchTab(tab,el){
   if(currentTab===tab&&el)return;
   currentTab=tab;activeGenre=0;fYear='';fRating=0;fLang='';
   document.querySelectorAll('.tab-btn,.pnav-btn').forEach(b=>b.classList.remove('active'));
   if(el){el.classList.add('active');}
-  // sync both navs
   document.querySelector(`.tab-btn:nth-child(${['home','movies','tv','trending','watchlist'].indexOf(tab)+1})`)?.classList.add('active');
   document.querySelector(`.pnav-btn[data-tab="${tab}"]`)?.classList.add('active');
   document.getElementById('hero').style.display=tab==='home'?'block':'none';
@@ -753,13 +716,9 @@ function switchTab(tab,el){
   loadMC();
 }
 
-// ════════════════════════════════════
-// MAIN CONTENT
-// ════════════════════════════════════
 async function loadMC(){
   const mc=document.getElementById('mc');
   const isHome=currentTab==='home';
-  // Non-home: hero hidden, need top spacing after fixed header
   mc.innerHTML=isHome?'<div style="height:.5rem"></div>':'<div class="page-spacer" style="height:72px"></div>';
   mc.classList.remove('pfade');void mc.offsetWidth;mc.classList.add('pfade');
   if(currentTab==='home')      return renderHome();
@@ -864,7 +823,7 @@ function renderWatchlist(){
   const g=document.createElement('div');g.className='mgrid';
   watchlist.forEach(item=>{
     const el=document.createElement('div');el.className='card';
-    el.innerHTML=`<div class="cpos"><img src="${IMG}w342${item.poster}" loading="lazy" onerror="this.src=''"/><div class="cover"><div class="cplay">▶</div></div><button class="cfav saved" onclick="event.stopPropagation();toggleWL(JSON.parse(decodeURIComponent('${encodeURIComponent(JSON.stringify(item))}')))">★</button><div class="ctag ${item.type}">${item.type==='tv'?'TV':'FILM'}</div></div><div class="cinfo"><div class="ctitle">${item.title}</div><div class="cyear">${item.year||''}</div></div>`;
+    el.innerHTML=`<div class="cpos"><img src="${item.poster ? IMG + 'w342' + item.poster : PLACEHOLDER}" loading="lazy" onerror="this.src='${PLACEHOLDER}'"/><div class="cover"><div class="cplay">▶</div></div><button class="cfav saved" onclick="event.stopPropagation();toggleWL(JSON.parse(decodeURIComponent('${encodeURIComponent(JSON.stringify(item))}')))">★</button><div class="ctag ${item.type}">${item.type==='tv'?'TV':'FILM'}</div></div><div class="cinfo"><div class="ctitle">${item.title}</div><div class="cyear">${item.year||''}</div></div>`;
     el.onclick=()=>openModal(item.id,item.type,item.title);
     g.appendChild(el);
   });
@@ -872,12 +831,12 @@ function renderWatchlist(){
 }
 
 // ════════════════════════════════════
-// BUILDERS
+// UI BUILDERS
 // ════════════════════════════════════
 function mkCard(item,type,t,y){
   const inWL=isInWL(item.id);
   const el=document.createElement('div');el.className='card';
-  el.innerHTML=`<div class="cpos"><img src="${IMG}w342${item.poster_path}" loading="lazy"/><div class="cshine"></div><div class="cover"><div class="cplay">▶</div></div><button class="cfav${inWL?' saved':''}" onclick="event.stopPropagation();toggleWL(JSON.parse(decodeURIComponent('${encodeURIComponent(JSON.stringify({id: item.id, type: type, title: t, poster: item.poster_path, year: y}))}')))">${inWL?'★':'☆'}</button><div class="crat"><span class="rt">★${item.vote_average?.toFixed(1)||'?'}</span></div><div class="ctag ${type}">${type==='tv'?'TV':'FILM'}</div></div><div class="cinfo"><div class="ctitle">${t}</div><div class="cyear">${y}</div></div>`;
+  el.innerHTML=`<div class="cpos"><img src="${item.poster_path ? IMG + 'w342' + item.poster_path : PLACEHOLDER}" loading="lazy" onerror="this.src='${PLACEHOLDER}'"/><div class="cshine"></div><div class="cover"><div class="cplay">▶</div></div><button class="cfav${inWL?' saved':''}" onclick="event.stopPropagation();toggleWL(JSON.parse(decodeURIComponent('${encodeURIComponent(JSON.stringify({id: item.id, type: type, title: t, poster: item.poster_path, year: y}))}')))">${inWL?'★':'☆'}</button><div class="crat"><span class="rt">★${item.vote_average?.toFixed(1)||'?'}</span></div><div class="ctag ${type}">${type==='tv'?'TV':'FILM'}</div></div><div class="cinfo"><div class="ctitle">${t}</div><div class="cyear">${y}</div></div>`;
   el.onclick=()=>openModal(item.id,type,t);
   return el;
 }
@@ -899,7 +858,7 @@ function buildWRow(items,type){
     if(!item.backdrop_path)return;
     const t=item.title||item.name||'',y=(item.release_date||item.first_air_date||'').slice(0,4);
     const el=document.createElement('div');el.className='wcard';
-    el.innerHTML=`<img src="${IMG}w780${item.backdrop_path}" loading="lazy"/><div class="wgrad"><div class="wtitle">${t}</div><div class="wmeta">${y} · ★${item.vote_average?.toFixed(1)||'?'}</div></div>`;
+    el.innerHTML=`<img src="${IMG}w780${item.backdrop_path}" loading="lazy" onerror="this.src='${PLACEHOLDER}'"/><div class="wgrad"><div class="wtitle">${t}</div><div class="wmeta">${y} · ★${item.vote_average?.toFixed(1)||'?'}</div></div>`;
     el.onclick=()=>openModal(item.id,type,t);row.appendChild(el);
   });
   return row;
@@ -910,7 +869,7 @@ function buildCwRow(){
   history2.slice(0,12).forEach(h=>{
     const el=document.createElement('div');el.className='cwitem';
     const p=progress[h.id]?.pct||h.prog||25;
-    el.innerHTML=`<img src="${IMG}w500${h.backdrop}" onerror="this.src=''"/><div class="cwov"><div class="cwtitle">${h.title}${h.type==='tv'&&h.lastEp?` · S${h.lastSeason||1}E${h.lastEp}`:''}</div><div class="cwpb"><div class="cwpf" style="width:${p}%"></div></div></div><button class="cwdel" onclick="event.stopPropagation();removeCw('${h.id}')">✕</button>`;
+    el.innerHTML=`<img src="${h.backdrop ? IMG + 'w500' + h.backdrop : PLACEHOLDER}" onerror="this.src='${PLACEHOLDER}'"/><div class="cwov"><div class="cwtitle">${h.title}${h.type==='tv'&&h.lastEp?` · S${h.lastSeason||1}E${h.lastEp}`:''}</div><div class="cwpb"><div class="cwpf" style="width:${p}%"></div></div></div><button class="cwdel" onclick="event.stopPropagation();removeCw('${h.id}')">✕</button>`;
     el.onclick=()=>openModal(h.id,h.type,h.title);row.appendChild(el);
   });
   return row;
@@ -930,7 +889,7 @@ function skRow(wide=false){
 function shd(t){return`<div class="shd"><div class="stitle">${t}</div></div>`}
 
 // ════════════════════════════════════
-// MODAL
+// MODAL & PLAYER
 // ════════════════════════════════════
 async function openModal(id,type,hint){
   const ov=document.getElementById('moverlay');
@@ -939,109 +898,97 @@ async function openModal(id,type,hint){
   document.getElementById('mcontent').innerHTML=`<div style="padding:4rem;text-align:center;color:var(--text2)"><div class="spin" style="margin:0 auto .8rem"></div>Loading…</div>`;
   failCnt=0;curSrcIdx=0;curSeason=1;curEp=1;curSubLang='';
 
-  const[det,cred,vids]=await Promise.all([api(`/${type}/${id}`),api(`/${type}/${id}/credits`),api(`/${type}/${id}/videos`)]);
-  curMedia={id,type,det,vids};
+  try {
+    const[det,cred,vids]=await Promise.all([api(`/${type}/${id}`),api(`/${type}/${id}/credits`),api(`/${type}/${id}/videos`)]);
+    curMedia={id,type,det,vids};
 
-  const title=det.title||det.name||hint;
-  const year=(det.release_date||det.first_air_date||'').slice(0,4);
-  const runtime=type==='movie'&&det.runtime?`${det.runtime}m`:(det.episode_run_time?.[0]?`~${det.episode_run_time[0]}m/ep`:'');
-  const gs=(det.genres||[]).map(g=>`<span class="mgtag">${g.name}</span>`).join('');
-  const cast=(cred.cast||[]).slice(0,10);
-  const inWL=isInWL(id);
+    const title=det.title||det.name||hint;
+    const year=(det.release_date||det.first_air_date||'').slice(0,4);
+    const runtime=type==='movie'&&det.runtime?`${det.runtime}m`:(det.episode_run_time?.[0]?`~${det.episode_run_time[0]}m/ep`:'');
+    const gs=(det.genres||[]).map(g=>`<span class="mgtag">${g.name}</span>`).join('');
+    const cast=(cred.cast||[]).slice(0,10);
+    const inWL=isInWL(id);
+    const spokenLangs=getSpokenLangs(det);
 
-  // Spoken languages from TMDB
-  const spokenLangs=getSpokenLangs(det);
+    const sv=progress[id]||{};
+    if(type==='tv'&&sv.season){curSeason=sv.season;curEp=sv.episode||1;}
 
-  // restore progress
-  const sv=progress[id]||{};
-  if(type==='tv'&&sv.season){curSeason=sv.season;curEp=sv.episode||1;}
+    const castHtml=cast.length?`<div style="margin-bottom:1.1rem"><div class="castlbl">Cast</div><div class="castrow">${cast.map(c=>`<div class="castcard" onclick="openPerson(${c.id}, decodeURIComponent('${encodeURIComponent(c.name||'')}'))"><img src="${c.profile_path?IMG+'w185'+c.profile_path:''}" onerror="this.src='${PLACEHOLDER}'"/><div class="cname">${c.name}</div><div class="cchar">${(c.character||'').slice(0,18)}</div></div>`).join('')}</div></div>`:'';
 
-  // cast html
-  const castHtml=cast.length?`<div style="margin-bottom:1.1rem"><div class="castlbl">Cast</div><div class="castrow">${cast.map(c=>`<div class="castcard" onclick="openPerson(${c.id}, decodeURIComponent('${encodeURIComponent(c.name||'')}'))"><img src="${c.profile_path?IMG+'w185'+c.profile_path:''}" onerror="this.src=''"/><div class="cname">${c.name}</div><div class="cchar">${(c.character||'').slice(0,18)}</div></div>`).join('')}</div></div>`:'';
+    let epHtml='';
+    if(type==='tv'&&det.seasons){
+      const valid=det.seasons.filter(s=>s.season_number>0);
+      const opts=valid.map(s=>`<option value="${s.season_number}"${s.season_number===curSeason?' selected':''}>${s.name||'Season '+s.season_number}</option>`).join('');
+      epHtml=`<div class="epsel"><div class="eptop"><div class="eplbl">Episodes</div><label class="aplbl"><input type="checkbox" id="apCk" ${autoNext?'checked':''} onchange="autoNext=this.checked"/>Auto-next</label></div><select class="ssel" id="ssel" onchange="changeSeason(+this.value)">${opts}</select><div class="epgrid" id="epg"></div></div>`;
+    }
 
-  // episode selector
-  let epHtml='';
-  if(type==='tv'&&det.seasons){
-    const valid=det.seasons.filter(s=>s.season_number>0);
-    const opts=valid.map(s=>`<option value="${s.season_number}"${s.season_number===curSeason?' selected':''}>${s.name||'Season '+s.season_number}</option>`).join('');
-    epHtml=`<div class="epsel"><div class="eptop"><div class="eplbl">Episodes</div><label class="aplbl"><input type="checkbox" id="apCk" ${autoNext?'checked':''} onchange="autoNext=this.checked"/>Auto-next</label></div><select class="ssel" id="ssel" onchange="changeSeason(+this.value)">${opts}</select><div class="epgrid" id="epg"></div></div>`;
-  }
+    const subLangs=[{v:'',l:'Default'},{v:'en',l:'English'},{v:'hi',l:'हिंदी (Hindi)'},{v:'ko',l:'한국어 (Korean)'},{v:'ja',l:'日本語 (Japanese)'},{v:'es',l:'Español'},{v:'fr',l:'Français'},{v:'de',l:'Deutsch'},{v:'zh',l:'中文 (Chinese)'},{v:'ar',l:'العربية (Arabic)'},{v:'pt',l:'Português'},{v:'ta',l:'தமிழ் (Tamil)'},{v:'te',l:'తెలుగు (Telugu)'},{v:'ml',l:'മലയാളം (Malayalam)'},{v:'ru',l:'Русский'},{v:'tr',l:'Türkçe'},{v:'it',l:'Italiano'},{v:'pl',l:'Polski'},{v:'nl',l:'Nederlands'}];
 
-  // subtitle selector with more languages including Hindi
-  const subLangs=[{v:'',l:'Default'},{v:'en',l:'English'},{v:'hi',l:'हिंदी (Hindi)'},{v:'ko',l:'한국어 (Korean)'},{v:'ja',l:'日本語 (Japanese)'},{v:'es',l:'Español'},{v:'fr',l:'Français'},{v:'de',l:'Deutsch'},{v:'zh',l:'中文 (Chinese)'},{v:'ar',l:'العربية (Arabic)'},{v:'pt',l:'Português'},{v:'ta',l:'தமிழ் (Tamil)'},{v:'te',l:'తెలుగు (Telugu)'},{v:'ml',l:'മലയാളം (Malayalam)'},{v:'ru',l:'Русский'},{v:'tr',l:'Türkçe'},{v:'it',l:'Italiano'},{v:'pl',l:'Polski'},{v:'nl',l:'Nederlands'}];
+    const srcBtns=SOURCES.map((s,i)=>{
+      const langDots=s.langs.slice(0,4).map(l=>`<span class="src-lang-dot ${l}">${LANG_MAP[l]||l.toUpperCase()}</span>`).join('');
+      return `<button class="srcbtn${i===0?' active':''}" onclick="switchSrc(${i},this)" title="${s.label} -- supports: ${s.langs.map(l=>langName(l)).join(', ')}">${s.label} <span class="ql">${s.ql}</span><div class="src-langs">${langDots}</div></button>`;
+    }).join('');
 
-  // source buttons with language dots
-  const srcBtns=SOURCES.map((s,i)=>{
-    const langDots=s.langs.slice(0,4).map(l=>`<span class="src-lang-dot ${l}">${LANG_MAP[l]||l.toUpperCase()}</span>`).join('');
-    return `<button class="srcbtn${i===0?' active':''}" onclick="switchSrc(${i},this)" title="${s.label} -- supports: ${s.langs.map(l=>langName(l)).join(', ')}">${s.label} <span class="ql">${s.ql}</span><div class="src-langs">${langDots}</div></button>`;
-  }).join('');
+    const langBanner=spokenLangs.length?`<div class="lang-banner"><div class="lang-banner-dot"></div><span>Available in:</span><div class="lang-spoken-chips">${spokenLangs.map(l=>`<span class="lchip ${l}">${langName(l)}</span>`).join('')}</div></div>`:'';
 
-  // spoken language banner
-  const langBanner=spokenLangs.length?`<div class="lang-banner"><div class="lang-banner-dot"></div><span>Available in:</span><div class="lang-spoken-chips">${spokenLangs.map(l=>`<span class="lchip ${l}">${langName(l)}</span>`).join('')}</div></div>`:'';
-
-  document.getElementById('mcontent').innerHTML=`
-    <div class="mbg"><img src="${IMG}w1280${det.backdrop_path||det.poster_path}" onerror="this.style.display='none'"/><div class="mbggrad"></div></div>
-    <div class="mbody">
-      <div class="mtitle">${title}</div>
-      <div class="mmeta">
-        <span class="mtmdb">TMDB ★${det.vote_average?.toFixed(1)||'?'}</span>
-        <span class="mdot"></span><span class="myear">${year}</span>
-        ${runtime?`<span class="mdot"></span><span class="mruntime">${runtime}</span>`:''}
-        <span class="mdot"></span><span class="mlang">${(det.original_language||'en').toUpperCase()}</span>
-        <span class="mimdb" id="mImdb"></span>
-      </div>
-      ${spokenLangs.length?`<div class="mlang-badges">${spokenLangs.map(l=>`<span class="mlang-badge ${l}">${langName(l)}</span>`).join('')}</div>`:''}
-      <div class="mgenres">${gs}</div>
-      <div class="mdesc">${det.overview||'No description available.'}</div>
-      <div class="macts">
-        <button class="mbtn${inWL?' saved':''}" id="mFav" onclick="toggleWL(JSON.parse(decodeURIComponent('${encodeURIComponent(JSON.stringify({id, type, title, poster: det.poster_path||'', year}))}')))">
-          ${inWL?'★ Saved':'☆ Watchlist'}
-        </button>
-        <button class="mbtn" onclick="openTrailer(${id},'${type}')">🎞 Trailer</button>
-      </div>
-      ${castHtml}
-      <div class="psec">
-        <div class="phead">
-          <div class="plbl">▶ Stream</div>
-          <div style="display:flex;align-items:center;gap:.4rem;flex-wrap:wrap">
-            <div class="srcwrap" id="srcBtns">${srcBtns}</div>
-            <a class="ext-btn" id="extBtn" target="_blank" rel="noopener noreferrer" title="Open in new tab if iframe is blocked">↗ Open</a>
-            <button class="ext-btn" id="adShieldBadge" onclick="toggleAdShield();setTimeout(()=>{const b=document.getElementById('adShieldBadge');if(b){b.textContent=getAdShieldOn()?(window._adBlocked>0?'🛡 '+window._adBlocked+' blocked':'🛡 Shield ON'):'🛡 Shield OFF';b.style.color=getAdShieldOn()?'#22c55e':'var(--muted)'}},50)" style="cursor:pointer;color:#22c55e;border-color:rgba(34,197,94,.25);background:rgba(34,197,94,.07)" title="Toggle Ad Shield">🛡 Shield ON</button>
+    document.getElementById('mcontent').innerHTML=`
+      <div class="mbg"><img src="${IMG}w1280${det.backdrop_path||det.poster_path}" onerror="this.style.display='none'"/><div class="mbggrad"></div></div>
+      <div class="mbody">
+        <div class="mtitle">${title}</div>
+        <div class="mmeta">
+          <span class="mtmdb">TMDB ★${det.vote_average?.toFixed(1)||'?'}</span>
+          <span class="mdot"></span><span class="myear">${year}</span>
+          ${runtime?`<span class="mdot"></span><span class="mruntime">${runtime}</span>`:''}
+          <span class="mdot"></span><span class="mlang">${(det.original_language||'en').toUpperCase()}</span>
+          <span class="mimdb" id="mImdb"></span>
+        </div>
+        ${spokenLangs.length?`<div class="mlang-badges">${spokenLangs.map(l=>`<span class="mlang-badge ${l}">${langName(l)}</span>`).join('')}</div>`:''}
+        <div class="mgenres">${gs}</div>
+        <div class="mdesc">${det.overview||'No description available.'}</div>
+        <div class="macts">
+          <button class="mbtn${inWL?' saved':''}" id="mFav" onclick="toggleWL(JSON.parse(decodeURIComponent('${encodeURIComponent(JSON.stringify({id, type, title, poster: det.poster_path||'', year}))}')))">
+            ${inWL?'★ Saved':'☆ Watchlist'}
+          </button>
+          <button class="mbtn" onclick="openTrailer(${id},'${type}')">🎞 Trailer</button>
+        </div>
+        ${castHtml}
+        <div class="psec">
+          <div class="phead">
+            <div class="plbl">▶ Stream</div>
+            <div style="display:flex;align-items:center;gap:.4rem;flex-wrap:wrap">
+              <div class="srcwrap" id="srcBtns">${srcBtns}</div>
+              <a class="ext-btn" id="extBtn" target="_blank" rel="noopener noreferrer" title="Open in new tab">↗ Open</a>
+              <button class="ext-btn" id="adShieldBadge" onclick="toggleAdShield();" style="cursor:pointer;color:#22c55e;border-color:rgba(34,197,94,.25);background:rgba(34,197,94,.07)" title="Toggle Ad Shield">🛡 Shield ON</button>
+            </div>
           </div>
+          ${langBanner}
+          <div id="pwrap"><div class="ploading"><div class="spin"></div>Preparing stream…</div></div>
+          <div class="subrow">
+            <div class="sublbl">🌐 Subs</div>
+            <select class="subsel" id="subsel" onchange="changeSubLang(this.value)">${subLangs.map(l=>`<option value="${l.v}">${l.l}</option>`).join('')}</select>
+            <div class="subnote">Best on VidLink & LetsEmbed</div>
+          </div>
+          ${epHtml}
         </div>
-        ${langBanner}
-        <div id="pwrap"><div class="ploading"><div class="spin"></div>Preparing stream…</div></div>
-        <div class="subrow">
-          <div class="sublbl">🌐 Subs</div>
-          <select class="subsel" id="subsel" onchange="changeSubLang(this.value)">${subLangs.map(l=>`<option value="${l.v}">${l.l}</option>`).join('')}</select>
-          <div class="subnote">best on VidLink & LetsEmbed</div>
-        </div>
-        ${epHtml}
-      </div>
-    </div>`;
+      </div>`;
 
-  getImdb(id,type).then(r=>{const el=document.getElementById('mImdb');if(el&&r)el.textContent=`IMDb ${r}`;});
-  if(type==='tv') await loadEps(curSeason,det);
-  updatePlayer();
-  addHist({id,type,title,backdrop:det.backdrop_path,prog:0});
+    getImdb(id,type).then(r=>{const el=document.getElementById('mImdb');if(el&&r)el.textContent=`IMDb ${r}`;});
+    if(type==='tv') await loadEps(curSeason,det);
+    updatePlayer();
+    addHist({id,type,title,backdrop:det.backdrop_path,prog:0});
+    updateShieldBadge();
+  } catch(e) {
+    console.error(e);
+    showErr(e.message);
+  }
 }
 
-function closeModal(){
-  document.getElementById('moverlay').classList.remove('open');
-  const pw=document.getElementById('pwrap');
-  if(pw) pw.innerHTML='<div class="ploading"><div class="spin"></div></div>';
-}
-
-// ════════════════════════════════════
-// PLAYER -- no sandbox, just direct iframe
-// ════════════════════════════════════
 function updatePlayer(){
   const pw=document.getElementById('pwrap');
   if(!pw||!curMedia)return;
   pw.innerHTML=`<div class="ploading"><div class="spin"></div><div>Loading ${SOURCES[curSrcIdx].label}…</div></div>`;
   const{id,type}=curMedia;
   const url=SOURCES[curSrcIdx].fn(id,type,curSeason,curEp,curSubLang);
-  // Update external link
   const ext=document.getElementById('extBtn');
   if(ext) ext.href=url;
   setTimeout(()=>{
@@ -1050,7 +997,6 @@ function updatePlayer(){
     f.setAttribute('allowfullscreen','');
     f.setAttribute('allow','fullscreen;autoplay;encrypted-media;picture-in-picture');
     f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
-    // NO sandbox -- required for video players to work
     f.src=url;
     pw.innerHTML='';pw.appendChild(f);
   },350);
@@ -1061,32 +1007,32 @@ function updatePlayer(){
   }
 }
 
+function closeModal(){
+  document.getElementById('moverlay').classList.remove('open');
+  const pw=document.getElementById('pwrap');
+  if(pw) pw.innerHTML='<div class="ploading"><div class="spin"></div></div>';
+}
+
 function switchSrc(idx,el){
   curSrcIdx=idx;failCnt=0;curSubLang='';
   document.querySelectorAll('.srcbtn').forEach(b=>b.classList.remove('active'));
   if(el)el.classList.add('active');
-  // reset subtitle
   const ss=document.getElementById('subsel');if(ss)ss.value='';
-  // update external link
-  const{id,type}=curMedia;
-  const url=SOURCES[idx].fn(id,type,curSeason,curEp,'');
-  const ext=document.getElementById('extBtn');if(ext)ext.href=url;
   updatePlayer();
-  showToast(`▶ ${SOURCES[idx].label} -- Supports: ${SOURCES[idx].langs.map(l=>langName(l)).join(', ')}`);
+  showToast(`▶ ${SOURCES[idx].label}`);
 }
 
 function changeSubLang(val){
   curSubLang=val;
   const{id,type}=curMedia;
-  const src=SOURCES[curSrcIdx];
-  let url=src.fn(id,type,curSeason,curEp,val);
+  const url=SOURCES[curSrcIdx].fn(id,type,curSeason,curEp,val);
   const f=document.querySelector('.pframe');
   if(f){f.src='';setTimeout(()=>{f.src=url;},100);}
   showToast(val?`Subtitles: ${langName(val)}`:'Default subtitles');
 }
 
 // ════════════════════════════════════
-// EPISODES
+// TV LOGIC
 // ════════════════════════════════════
 async function changeSeason(s){curSeason=s;curEp=1;await loadEps(s,curMedia.det);updatePlayer();}
 
@@ -1108,7 +1054,7 @@ function selEp(ep,el){
 }
 
 // ════════════════════════════════════
-// TRAILER
+// MISC
 // ════════════════════════════════════
 async function openTrailer(id,type){
   const vids=curMedia?.vids||(await api(`/${type}/${id}/videos`));
@@ -1120,43 +1066,34 @@ async function openTrailer(id,type){
 }
 function closeTrailer(){document.getElementById('toverlay').classList.remove('open');document.getElementById('tframe').src='';}
 
-// ════════════════════════════════════
-// PERSON
-// ════════════════════════════════════
 async function openPerson(id,name){
   document.getElementById('modal').style.maxWidth='600px';
   document.getElementById('mcontent').innerHTML=`<div style="padding:3rem;text-align:center;color:var(--text2)"><div class="spin" style="margin:0 auto"></div></div>`;
   const[p,c]=await Promise.all([api(`/person/${id}`),api(`/person/${id}/combined_credits`)]);
   const known=(c.cast||[]).sort((a,b)=>(b.popularity||0)-(a.popularity||0)).slice(0,12);
   document.getElementById('mcontent').innerHTML=`<div class="pbody"><button class="mclose" onclick="closeModal()">✕</button>
-    <div class="phead2"><img class="pimg" src="${p.profile_path?IMG+'w185'+p.profile_path:''}" onerror="this.style.display='none'"/>
+    <div class="phead2"><img class="pimg" src="${p.profile_path?IMG+'w185'+p.profile_path:PLACEHOLDER}" onerror="this.src='${PLACEHOLDER}'"/>
     <div><div class="pname">${p.name}</div><div class="psub">${p.known_for_department||'Actor'}${p.birthday?' · '+p.birthday:''}</div>${p.place_of_birth?`<div class="psub">📍 ${p.place_of_birth}</div>`:''}</div></div>
     <div class="pbio">${p.biography||'No biography available.'}</div>
     <div class="castlbl" style="margin-bottom:.6rem">Known For</div>
     <div class="crow" style="padding-bottom:.5rem">${known.map(m=>{const t2=m.title||m.name||'',tp=m.media_type||'movie';
-      return `<div class="card" style="width:110px" onclick="closeModal(); setTimeout(() => openModal(${m.id}, '${tp}', decodeURIComponent('${encodeURIComponent(t2)}')), 300)"><div class="cpos"><img src="${m.poster_path?IMG+'w342'+m.poster_path:''}" loading="lazy" onerror="this.src=''"/><div class="cover"><div class="cplay">▶</div></div></div><div class="cinfo"><div class="ctitle">${t2}</div></div></div>`;}).join('')}
+      return `<div class="card" style="width:110px" onclick="closeModal(); setTimeout(() => openModal(${m.id}, '${tp}', decodeURIComponent('${encodeURIComponent(t2)}')), 300)"><div class="cpos"><img src="${m.poster_path?IMG+'w342'+m.poster_path:PLACEHOLDER}" loading="lazy" onerror="this.src='${PLACEHOLDER}'"/><div class="cover"><div class="cplay">▶</div></div></div><div class="cinfo"><div class="ctitle">${t2}</div></div></div>`;}).join('')}
     </div></div>`;
 }
 
-// ════════════════════════════════════
-// WATCHLIST
-// ════════════════════════════════════
 function isInWL(id){return watchlist.some(w=>+w.id===+id)}
 function toggleWL(item){
   item.id=+item.id;
   const was=isInWL(item.id);
   watchlist=was?watchlist.filter(w=>+w.id!==item.id):[item,...watchlist];
   localStorage.setItem('sv_watchlist',JSON.stringify(watchlist));
-  showToast(was?'Removed from watchlist':'⭐ Added to watchlist!');
+  showToast(was?'Removed':'⭐ Added!');
   const mb=document.getElementById('mFav');
   if(mb){mb.className='mbtn'+(isInWL(item.id)?' saved':'');mb.textContent=isInWL(item.id)?'★ Saved':'☆ Watchlist';}
   const hb=document.getElementById('heroFav');
   if(hb){hb.className='btn-fav'+(isInWL(item.id)?' saved':'');hb.textContent=isInWL(item.id)?'★ Saved':'☆ Save';}
 }
 
-// ════════════════════════════════════
-// HISTORY
-// ════════════════════════════════════
 function addHist(item){
   item.id=+item.id;history2=history2.filter(h=>+h.id!==item.id);
   history2.unshift(item);history2=history2.slice(0,20);
@@ -1171,9 +1108,6 @@ function removeCw(id){
   localStorage.setItem('sv_history',JSON.stringify(history2));loadMC();
 }
 
-// ════════════════════════════════════
-// SEARCH
-// ════════════════════════════════════
 let stimer=null;
 document.getElementById('searchInput').addEventListener('input',e=>{
   clearTimeout(stimer);
@@ -1182,17 +1116,16 @@ document.getElementById('searchInput').addEventListener('input',e=>{
   if(q.length<2){dr.classList.remove('open');return;}
   stimer=setTimeout(()=>doSearch(q),260);
 });
-document.getElementById('searchInput').addEventListener('blur',()=>setTimeout(()=>document.getElementById('srDrop').classList.remove('open'),200));
 
 async function doSearch(q){
   const d=await api('/search/multi',`&query=${encodeURIComponent(q)}`);
   const dr=document.getElementById('srDrop');
   const items=d.results.filter(i=>(i.media_type==='movie'||i.media_type==='tv')&&(i.poster_path||i.backdrop_path)).slice(0,7);
-  if(!items.length){dr.innerHTML='<div style="padding:1rem;color:var(--text2);font-size:.8rem;text-align:center">Nothing found</div>';dr.classList.add('open');return;}
+  if(!items.length){dr.innerHTML='<div style="padding:1rem;text-align:center">Not found</div>';dr.classList.add('open');return;}
   dr.innerHTML=items.map(i=>{
     const t=i.title||i.name||'',y=(i.release_date||i.first_air_date||'').slice(0,4);
-    return `<div class="sr-item" onclick="document.getElementById('srDrop').classList.remove('open');document.getElementById('searchInput').value='';openModal(${i.id},'${i.media_type}',decodeURIComponent('${encodeURIComponent(t)}'))">
-      <img class="sr-img" src="${i.poster_path?IMG+'w92'+i.poster_path:''}" onerror="this.style.display='none'" loading="lazy"/>
+    return `<div class="sr-item" onclick="openModal(${i.id},'${i.media_type}','${t.replace(/'/g,"\\'")}')">
+      <img class="sr-img" src="${i.poster_path?IMG+'w92'+i.poster_path:PLACEHOLDER}" onerror="this.src='${PLACEHOLDER}'"/>
       <div class="sr-info"><div class="sr-title">${t}</div><div class="sr-meta">${y} · ★${i.vote_average?.toFixed(1)||'?'}</div></div>
       <span class="sr-badge ${i.media_type}">${i.media_type==='tv'?'TV':'FILM'}</span>
     </div>`;
@@ -1200,51 +1133,35 @@ async function doSearch(q){
   dr.classList.add('open');
 }
 
-// ════════════════════════════════════
-// THEME
-// ════════════════════════════════════
 function toggleTheme(){document.getElementById('tmenu').classList.toggle('open')}
 function setTheme(t,el){
   document.documentElement.setAttribute('data-theme',t);
   localStorage.setItem('sv_theme',t);
   document.querySelectorAll('.topt').forEach(x=>x.classList.remove('active'));
   el.classList.add('active');document.getElementById('tmenu').classList.remove('open');
-  showToast(`Theme: ${el.textContent.trim()}`);
+  showToast(`Theme: ${t}`);
 }
-document.addEventListener('click',e=>{
-  if(!e.target.closest('#themeBtn')&&!e.target.closest('#tmenu'))document.getElementById('tmenu').classList.remove('open');
-});
 
-// ════════════════════════════════════
-// TOAST
-// ════════════════════════════════════
-let ttimer=null;
 function showToast(msg){
   const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
-  clearTimeout(ttimer);ttimer=setTimeout(()=>t.classList.remove('show'),2600);
+  setTimeout(()=>t.classList.remove('show'),2600);
 }
 
-// ════════════════════════════════════
-// KEYBOARD
-// ════════════════════════════════════
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'){closeModal();closeTrailer();}
-  if(e.key==='/'&&!e.target.matches('input,select')){e.preventDefault();document.getElementById('searchInput').focus();}
-});
-document.getElementById('moverlay').addEventListener('click',e=>{if(e.target===document.getElementById('moverlay'))closeModal();});
-document.getElementById('toverlay').addEventListener('click',e=>{if(e.target===document.getElementById('toverlay'))closeTrailer();});
-
-// ════════════════════════════════════
-// ERROR
-// ════════════════════════════════════
-function showErr(msg){
-  document.getElementById('hero').innerHTML=`<div style="display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:1rem;padding:2rem;text-align:center"><div style="font-size:2.5rem">⚠️</div><div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px">Connection Error</div><div style="color:var(--text2);max-width:420px;line-height:1.7;font-size:.84rem">Safari blocks API calls from local files.<br><br><strong style="color:var(--text)">Fix:</strong> Drag this file to <a href="https://app.netlify.com/drop" target="_blank" style="color:var(--gold)">netlify.com/drop</a> → open the link on iPhone ✅<br>Or open in <strong>Chrome/Firefox</strong> on PC/Mac ✅</div>${msg?`<div style="color:#f87171;font-size:.7rem">${msg}</div>`:''}</div>`;
-  document.getElementById('mc').innerHTML='';
+function showErr(msg) {
+  document.getElementById('hero').innerHTML = `
+    <div style="display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:1rem;padding:2rem;text-align:center">
+      <div style="font-size:2.5rem">⚠️</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px">Service Unavailable</div>
+      <div style="color:var(--text2);max-width:420px;line-height:1.7;font-size:.84rem">
+        Having trouble reaching the servers.<br><br>
+        <strong style="color:var(--text)">Fix:</strong> Refresh the page or check your connection. 
+        Disable VPNs if the issue persists.
+      </div>
+      ${msg ? `<div style="color:#f87171;font-size:.7rem">${msg}</div>` : ''}
+    </div>`;
+  document.getElementById('mc').innerHTML = '';
 }
 
-// ════════════════════════════════════
-// LOGOUT
-// ════════════════════════════════════
 async function doLogout(){
   if(!confirm('Log out?')) return;
   await fetch('/api/auth',{method:'DELETE'});
@@ -1252,147 +1169,61 @@ async function doLogout(){
 }
 
 // ════════════════════════════════════
-// INIT
-// ════════════════════════════════════
-(async()=>{
-  // ── Auth gate: verify session with server before loading ──
-  try{
-    const authCheck = await fetch('/api/check');
-    if(!authCheck.ok){
-      // Not authenticated — redirect to login
-      window.location.href = '/login?from=' + encodeURIComponent(window.location.pathname);
-      return;
-    }
-  }catch(e){
-    // Network error — still try to load, proxy will catch unauth requests
-    console.warn('Auth check failed:', e.message);
-  }
-
-  // ── Load app ──
-  const th=localStorage.getItem('sv_theme')||'dark';
-  document.documentElement.setAttribute('data-theme',th);
-  document.querySelectorAll('.topt').forEach(el=>el.classList.toggle('active',el.textContent.trim().toLowerCase().startsWith(th)));
-  try{await loadGenres();await Promise.all([loadHero(),loadMC()]);}
-  catch(e){console.error(e);showErr(e.message);}
-})();
-
-// ════════════════════════════════════
-// AD REDIRECT INTERCEPTOR
-// Catches popup/redirect attempts that
-// escape from iframe to parent scope
+// AD SHIELD LOGIC
 // ════════════════════════════════════
 (function installAdShield(){
-
   let blockedCount = 0;
   let adShieldOn = JSON.parse(localStorage.getItem('sv_adshield') ?? 'true');
-
-  // ── 1. Override window.open ──────────────────
-  // Any popup spawned at parent-page scope gets swallowed
   const _origOpen = window.open.bind(window);
+
   window.open = function(url, target, features) {
     if (!adShieldOn) return _origOpen(url, target, features);
-    // Allow YouTube embeds (trailers)
-    if (url && url.includes('youtube.com')) return _origOpen(url, target, features);
-    // Allow intentional external opens (our ↗ button uses target=_blank on <a>)
-    if (target === '_svopen') return _origOpen(url, '_blank', features);
-    // Everything else → swallow silently
+    if (url && (url.includes('youtube.com') || target === '_svopen')) return _origOpen(url, '_blank', features);
     blockedCount++;
     updateShieldBadge();
-    showToast(`🛡 Ad blocked (${blockedCount})`);
-    // Return a fake window object so scripts don't crash
+    showToast(`🛡 Blocked (${blockedCount})`);
     return { closed: true, close: ()=>{}, focus: ()=>{}, location: { href: '' } };
   };
 
-  // ── 2. beforeunload guard ────────────────────
-  // If anything tries to navigate the main page away, catch it
   window.addEventListener('beforeunload', (e) => {
-    if (!adShieldOn) return;
-    // If modal is open, a redirect is almost certainly an ad
-    const modalOpen = document.getElementById('moverlay')?.classList.contains('open');
-    if (modalOpen) {
-      e.preventDefault();
-      e.returnValue = '';
-      showToast('🛡 Redirect blocked!');
-      blockedCount++;
-      updateShieldBadge();
-      return '';
+    if (adShieldOn && document.getElementById('moverlay')?.classList.contains('open')) {
+      e.preventDefault(); e.returnValue = '';
+      blockedCount++; updateShieldBadge();
     }
   });
 
-  // ── 3. visibilitychange -- background tab detector ───
-  // When page goes hidden while modal is open = background tab likely opened
-  let _lastVisible = Date.now();
-  document.addEventListener('visibilitychange', () => {
-    if (!adShieldOn) return;
-    const modalOpen = document.getElementById('moverlay')?.classList.contains('open');
-    if (document.hidden && modalOpen) {
-      // Page went to background -- likely an ad tab opened
-      blockedCount++;
-      updateShieldBadge();
-      showToast('🛡 Background tab detected -- switch back here');
-      // Refocus when user returns
-      const onReturn = () => {
-        if (!document.hidden) {
-          document.removeEventListener('visibilitychange', onReturn);
-          showToast('🛡 Back! ' + blockedCount + ' ad(s) intercepted this session');
-        }
-      };
-      document.addEventListener('visibilitychange', onReturn);
-    }
-  });
-
-  // ── 4. window.blur guard ─────────────────────
-  let _blurTimer = null;
-  window.addEventListener('blur', () => {
-    if (!adShieldOn) return;
-    const modalOpen = document.getElementById('moverlay')?.classList.contains('open');
-    if (modalOpen) {
-      // Something stole focus -- likely a popup
-      _blurTimer = setTimeout(() => {
-        // Try to reclaim focus
-        window.focus();
-      }, 150);
-    }
-  });
-  window.addEventListener('focus', () => clearTimeout(_blurTimer));
-
-  // ── 5. Shield badge in player header ─────────
-  function updateShieldBadge() {
+  window.updateShieldBadge = function() {
     const badge = document.getElementById('adShieldBadge');
     if (badge) {
-      badge.textContent = adShieldOn
-        ? (blockedCount > 0 ? `🛡 ${blockedCount} blocked` : '🛡 Shield ON')
-        : '🛡 Shield OFF';
+      badge.textContent = adShieldOn ? (blockedCount > 0 ? `🛡 ${blockedCount} blocked` : '🛡 Shield ON') : '🛡 Shield OFF';
       badge.style.color = adShieldOn ? '#22c55e' : 'var(--muted)';
     }
-  }
+  };
 
-  // ── 6. Toggle function (called from UI button) ─
   window.toggleAdShield = function() {
     adShieldOn = !adShieldOn;
     localStorage.setItem('sv_adshield', JSON.stringify(adShieldOn));
     updateShieldBadge();
-    showToast(adShieldOn ? '🛡 Ad Shield ON' : '🛡 Ad Shield OFF');
+    showToast(adShieldOn ? '🛡 Shield ON' : '🛡 Shield OFF');
   };
 
   window.getAdShieldOn = () => adShieldOn;
-  window.resetAdCount = () => { blockedCount = 0; updateShieldBadge(); };
-
-  // Init badge after DOM ready
-  document.addEventListener('DOMContentLoaded', updateShieldBadge);
-  
-  // ── 7. Also update when modal opens (badge is inside modal) ──
-  const _origOpenModal = window.openModal;
-  window.openModal = async function(...args) {
-    if (typeof _origOpenModal === 'function') {
-      await _origOpenModal.apply(this, args);
-    }
-    // Small timeout to ensure the DOM has updated the modal content
-    setTimeout(updateShieldBadge, 50);
-  };
-
 })();
 
+// ════════════════════════════════════
+// INIT
+// ════════════════════════════════════
+(async()=>{
+  try{
+    const authCheck = await fetch('/api/check');
+    if(!authCheck.ok){ window.location.href = '/login?from=' + encodeURIComponent(window.location.pathname); return; }
+  }catch(e){ console.warn('Auth check failed:', e.message); }
+
+  const th=localStorage.getItem('sv_theme')||'dark';
+  document.documentElement.setAttribute('data-theme',th);
+  try{await loadGenres();await Promise.all([loadHero(),loadMC()]);}
+  catch(e){console.error(e);showErr(e.message);}
+})();
 </script>
 </body>
 </html>
