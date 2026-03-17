@@ -2,15 +2,18 @@ export default async function handler(req, res) {
 
   // POST — login
   if (req.method === 'POST') {
-    const { password } = req.body;
+    let body = req.body;
+    // Parse body if it's a string
+    if (typeof body === 'string') {
+      try { body = JSON.parse(body); } catch(e) { body = {}; }
+    }
+    const { password } = body || {};
 
     if (!password || password !== process.env.APP_PASSWORD) {
-      // Deliberate delay to slow brute force — use async sleep not setTimeout+return
       await new Promise(r => setTimeout(r, 800));
       return res.status(401).json({ error: 'Incorrect passkey' });
     }
 
-    // Correct — set auth cookie (7 days)
     res.setHeader('Set-Cookie',
       `sv_auth=${process.env.AUTH_SECRET}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=${60 * 60 * 24 * 7}`
     );
