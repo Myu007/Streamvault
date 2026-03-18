@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Welcome</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{height:100%;overflow-x:hidden}
+body{
+  background:#06080e;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  display:flex;align-items:center;justify-content:center;
+  min-height:100vh;min-height:100dvh;
+  position:relative;
+  overflow-x:hidden;overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+/* ── ORBS ── */
+.orbs{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);animation:orbFloat linear infinite}
+.orb1{width:500px;height:500px;background:radial-gradient(circle,rgba(230,57,70,.22),transparent 70%);top:-100px;left:-100px;animation-duration:18s}
+.orb2{width:400px;height:400px;background:radial-gradient(circle,rgba(99,102,241,.18),transparent 70%);bottom:-80px;right:-80px;animation-duration:22s;animation-delay:-8s}
+.orb3{width:300px;height:300px;background:radial-gradient(circle,rgba(244,162,97,.14),transparent 70%);top:40%;left:60%;animation-duration:15s;animation-delay:-4s}
+.orb4{width:250px;height:250px;background:radial-gradient(circle,rgba(34,197,94,.1),transparent 70%);top:20%;right:20%;animation-duration:20s;animation-delay:-12s}
+@keyframes orbFloat{
+  0%{transform:translate(0,0) scale(1)}
+  25%{transform:translate(30px,-20px) scale(1.05)}
+  50%{transform:translate(-20px,30px) scale(.95)}
+  75%{transform:translate(20px,20px) scale(1.08)}
+  100%{transform:translate(0,0) scale(1)}
+}
+
+/* ── GRID ── */
+.grid{position:fixed;inset:0;z-index:1;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%);
+}
+
+/* ── PARTICLES ── */
+.particles{position:fixed;inset:0;z-index:1;pointer-events:none}
+.particle{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(255,255,255,.6);animation:particleDrift linear infinite}
+@keyframes particleDrift{
+  0%{transform:translateY(100vh) translateX(0);opacity:0}
+  10%{opacity:1}90%{opacity:1}
+  100%{transform:translateY(-10vh) translateX(var(--drift));opacity:0}
+}
+
+/* ── CARD ── */
+.card{
+  position:relative;z-index:10;
+  width:100%;max-width:420px;
+  margin:1.5rem 1rem;
+  background:rgba(13,16,24,.78);
+  backdrop-filter:blur(40px) saturate(180%);
+  -webkit-backdrop-filter:blur(40px) saturate(180%);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  padding:2.5rem 2.2rem 2.2rem;
+  box-shadow:0 32px 80px rgba(0,0,0,.6),
+             0 0 0 1px rgba(255,255,255,.04) inset,
+             0 1px 0 rgba(255,255,255,.1) inset;
+  animation:cardIn .8s cubic-bezier(.34,1.3,.64,1) both;
+  transition:box-shadow .3s ease;
+}
+.card::before{
+  content:'';position:absolute;top:0;left:20%;right:20%;height:1px;
+  background:linear-gradient(to right,transparent,rgba(230,57,70,.6),rgba(244,162,97,.4),transparent);
+  border-radius:999px;
+}
+@keyframes cardIn{from{opacity:0;transform:translateY(32px) scale(.96)}to{opacity:1;transform:none}}
+.card.success{border-color:rgba(34,197,94,.25);box-shadow:0 32px 80px rgba(0,0,0,.6),0 0 40px rgba(34,197,94,.1)}
+
+/* ── ICON ── */
+.icon-wrap{display:flex;justify-content:center;margin-bottom:1.8rem;animation:iconIn 1s cubic-bezier(.34,1.5,.64,1) .2s both}
+@keyframes iconIn{from{opacity:0;transform:scale(.5) rotate(-10deg)}to{opacity:1;transform:none}}
+.icon-ring{
+  width:72px;height:72px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(230,57,70,.15),rgba(244,162,97,.1));
+  border:1px solid rgba(255,255,255,.1);
+  /* Use flex to perfectly center the SVG icon — no emoji alignment issues */
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+  box-shadow:0 0 30px rgba(230,57,70,.15);
+}
+.icon-ring::before{
+  content:'';position:absolute;inset:-4px;border-radius:50%;
+  border:1.5px solid transparent;
+  border-top-color:rgba(230,57,70,.5);
+  border-right-color:rgba(244,162,97,.3);
+  animation:ringRotate 3s linear infinite;
+}
+@keyframes ringRotate{to{transform:rotate(360deg)}}
+/* SVG star icon — pixel-perfect centering, no emoji rendering issues */
+.icon-star{
+  width:28px;height:28px;
+  fill:none;stroke:url(#starGrad);stroke-width:1.5;
+  stroke-linecap:round;stroke-linejoin:round;
+  filter:drop-shadow(0 0 6px rgba(230,57,70,.5));
+}
+
+/* ── TEXT ── */
+.welcome-text{text-align:center;margin-bottom:2rem;animation:fadeUp .7s ease .35s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.welcome-title{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:1.75rem;font-weight:500;
+  color:#eef0f6;line-height:1.2;
+  margin-bottom:.5rem;letter-spacing:-.01em;
+}
+.welcome-title span{background:linear-gradient(135deg,#e63946,#f4a261);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.welcome-sub{font-size:.82rem;color:rgba(136,146,164,.65);font-weight:400;letter-spacing:.2px}
+
+/* ── FORM ── */
+.form{animation:fadeUp .7s ease .45s both}
+.input-wrap{margin-bottom:1rem}
+.input-label{
+  display:block;font-size:.7rem;font-weight:600;
+  color:rgba(136,146,164,.75);letter-spacing:.8px;
+  text-transform:uppercase;margin-bottom:.45rem;
+}
+
+/* Separate container for input + icons so top:50% is relative to input row only */
+.input-row{
+  position:relative;
+  display:flex;align-items:center;
+}
+
+/* Input field */
+.input-field{
+  width:100%;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;
+  padding:.78rem 2.8rem .78rem 2.6rem;
+  color:#eef0f6;font-family:inherit;font-size:.95rem;
+  outline:none;transition:all .22s;letter-spacing:.5px;
+  /* ensure consistent line-height */
+  line-height:1.4;
+}
+.input-field:focus{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(230,57,70,.5);
+  box-shadow:0 0 0 3px rgba(230,57,70,.12);
+}
+.input-field::placeholder{color:rgba(136,146,164,.3);letter-spacing:0}
+
+/* Left icon — positioned inside .input-row so top:50% = center of input height */
+.input-icon-wrap{
+  position:absolute;
+  left:.82rem;
+  top:50%;
+  transform:translateY(-50%);
+  width:16px;height:16px;
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
+  color:rgba(136,146,164,.45);
+  transition:color .2s;
+  /* push down 1px — optical correction for SVG stroke weight */
+  margin-top:1px;
+}
+.input-row:focus-within .input-icon-wrap{color:rgba(230,57,70,.65)}
+.input-icon-svg{width:15px;height:15px;fill:none;stroke:currentColor;display:block;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Right toggle — inside .input-row */
+.toggle-vis{
+  position:absolute;
+  right:.82rem;
+  top:50%;
+  transform:translateY(-50%);
+  background:none;border:none;cursor:pointer;
+  width:28px;height:28px;
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(136,146,164,.35);
+  transition:color .2s;
+  padding:0;border-radius:6px;
+  /* same optical correction */
+  margin-top:1px;
+}
+.toggle-vis:hover{color:rgba(136,146,164,.75)}
+.toggle-vis svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;display:block}
+
+/* ── BUTTON ── */
+.submit-btn{
+  width:100%;margin-top:.25rem;
+  background:linear-gradient(135deg,#e63946,#c1121f);
+  color:#fff;border:none;border-radius:12px;
+  padding:.88rem 1rem;
+  font-family:inherit;font-size:.92rem;font-weight:600;
+  cursor:pointer;letter-spacing:.3px;
+  transition:all .22s cubic-bezier(.34,1.4,.64,1);
+  position:relative;overflow:hidden;
+  box-shadow:0 4px 20px rgba(230,57,70,.35),0 1px 0 rgba(255,255,255,.15) inset;
+}
+.submit-btn:hover{transform:translateY(-2px) scale(1.01);box-shadow:0 8px 28px rgba(230,57,70,.45)}
+.submit-btn:active{transform:scale(.98)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.btn-inner{display:flex;align-items:center;justify-content:center;gap:.5rem}
+.btn-spinner{
+  width:16px;height:16px;
+  border:2px solid rgba(255,255,255,.3);
+  border-top-color:#fff;
+  border-radius:50%;
+  animation:spin .6s linear infinite;display:none;
+  flex-shrink:0;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.submit-btn.loading .btn-label{display:none}
+.submit-btn.loading .btn-spinner{display:block}
+
+/* ── ERROR ── */
+.error-msg{
+  margin-top:.85rem;padding:.6rem .9rem;
+  background:rgba(230,57,70,.08);
+  border:1px solid rgba(230,57,70,.2);
+  border-radius:8px;color:#ff6b6b;
+  font-size:.78rem;text-align:center;
+  display:none;animation:shake .4s ease;
+}
+.error-msg.show{display:block}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+
+/* ── FOOTER ── */
+.footer{margin-top:1.6rem;text-align:center;font-size:.7rem;color:rgba(136,146,164,.28);animation:fadeUp .7s ease .6s both;letter-spacing:.3px}
+.footer-dots{display:flex;justify-content:center;gap:.4rem;margin-top:.6rem}
+.fdot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.1);animation:dotPulse 2s ease-in-out infinite}
+.fdot:nth-child(2){animation-delay:.3s}.fdot:nth-child(3){animation-delay:.6s}
+@keyframes dotPulse{0%,100%{opacity:.2;transform:scale(1)}50%{opacity:.8;transform:scale(1.4)}}
+
+/* ── RESPONSIVE ── */
+/* Mobile */
+@media(max-width:480px){
+  .card{padding:2rem 1.4rem 1.8rem;border-radius:20px;margin:1rem .75rem}
+  .welcome-title{font-size:1.45rem}
+  .input-field{font-size:.88rem}
+}
+/* Tablet */
+@media(min-width:481px) and (max-width:1024px){
+  .card{max-width:440px;padding:2.8rem 2.5rem 2.4rem}
+  .welcome-title{font-size:1.9rem}
+}
+/* Desktop */
+@media(min-width:1025px){
+  .card{max-width:460px;padding:3rem 2.8rem 2.6rem}
+  .welcome-title{font-size:2rem}
+  /* Desktop parallax enabled via JS */
+}
+/* Tall screens — keep card centered */
+@media(min-height:900px){
+  body{align-items:center}
+}
+/* Short screens — allow scrolling */
+@media(max-height:600px){
+  body{align-items:flex-start;padding-top:1rem}
+  .card{margin-top:1rem;margin-bottom:1rem}
+}
+</style>
+</head>
+<body>
+
+<div class="orbs">
+  <div class="orb orb1"></div><div class="orb orb2"></div>
+  <div class="orb orb3"></div><div class="orb orb4"></div>
+</div>
+<div class="grid"></div>
+<div class="particles" id="particles"></div>
+
+<div class="card" id="card">
+
+  <!-- Icon: SVG diamond star, pixel-perfect, no emoji rendering issues -->
+  <div class="icon-wrap">
+    <div class="icon-ring">
+      <svg class="icon-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#e63946"/>
+            <stop offset="100%" style="stop-color:#f4a261"/>
+          </linearGradient>
+        </defs>
+        <path d="M12 2L14.5 9.5H22L16 14L18.5 21.5L12 17L5.5 21.5L8 14L2 9.5H9.5L12 2Z" stroke="url(#starGrad)" stroke-width="1.5" fill="rgba(230,57,70,0.15)"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="welcome-text">
+    <div class="welcome-title">Welcome <span>back.</span></div>
+    <div class="welcome-sub">Enter your access key to continue</div>
+  </div>
+
+  <div class="form">
+    <div class="input-wrap">
+      <label class="input-label" for="pwInput">Access Key</label>
+      <!-- .input-row wraps only the input + icons so top:50% centres to the field -->
+      <div class="input-row">
+        <div class="input-icon-wrap">
+          <svg class="input-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+          </svg>
+        </div>
+        <input
+          type="password"
+          class="input-field"
+          id="pwInput"
+          placeholder="••••••••••••"
+          autocomplete="current-password"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+        />
+        <button class="toggle-vis" type="button" id="toggleVis" tabindex="-1" aria-label="Toggle visibility">
+          <svg id="eyeIcon" viewBox="0 0 24 24">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <button class="submit-btn" id="submitBtn" onclick="handleLogin()">
+      <span class="btn-inner">
+        <span class="btn-label">Continue →</span>
+        <div class="btn-spinner"></div>
+      </span>
+    </button>
+
+    <div class="error-msg" id="errMsg">Incorrect access key. Please try again.</div>
+  </div>
+
+  <div class="footer">
+    Private access only
+    <div class="footer-dots">
+      <div class="fdot"></div><div class="fdot"></div><div class="fdot"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── Particles ──────────────────────────────────
+(function(){
+  const c = document.getElementById('particles');
+  const n = window.innerWidth < 480 ? 15 : window.innerWidth < 1024 ? 22 : 30;
+  for(let i = 0; i < n; i++){
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `left:${Math.random()*100}%;animation-duration:${8+Math.random()*12}s;animation-delay:${-Math.random()*15}s;--drift:${(Math.random()-.5)*120}px;opacity:${.3+Math.random()*.5}`;
+    c.appendChild(p);
+  }
+})();
+
+// ── Eye toggle (SVG swap) ──────────────────────
+const inp = document.getElementById('pwInput');
+let eyeVisible = false;
+
+document.getElementById('toggleVis').addEventListener('click', function(){
+  eyeVisible = !eyeVisible;
+  inp.type = eyeVisible ? 'text' : 'password';
+  // Swap SVG path
+  document.getElementById('eyeIcon').innerHTML = eyeVisible
+    ? `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>`
+    : `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`;
+});
+
+// ── Enter key ──────────────────────────────────
+inp.addEventListener('keydown', e => { if(e.key === 'Enter') handleLogin(); });
+
+// Auto-focus (delay avoids iOS keyboard flash)
+setTimeout(() => { if(window.innerWidth > 768) inp.focus(); }, 500);
+
+// ── Login ──────────────────────────────────────
+async function handleLogin(){
+  const pw  = inp.value.trim();
+  const btn = document.getElementById('submitBtn');
+  const err = document.getElementById('errMsg');
+
+  if(!pw){
+    inp.classList.add('shake');
+    inp.style.borderColor = 'rgba(230,57,70,.5)';
+    setTimeout(()=>{ inp.classList.remove('shake'); inp.style.borderColor = ''; }, 500);
+    return;
+  }
+
+  btn.classList.add('loading');
+  btn.disabled = true;
+  err.classList.remove('show');
+
+  try{
+    const r = await fetch('/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw }),
+    });
+    const d = await r.json();
+
+    if(r.ok && d.ok){
+      // Success state
+      document.getElementById('card').classList.add('success');
+      btn.innerHTML = '<span class="btn-inner"><span class="btn-label">✓ Access granted</span></span>';
+      btn.style.background = 'linear-gradient(135deg,#22c55e,#16a34a)';
+      btn.style.boxShadow  = '0 4px 20px rgba(34,197,94,.4)';
+      const from = new URLSearchParams(window.location.search).get('from') || '/';
+      setTimeout(() => window.location.href = from, 700);
+    } else {
+      err.textContent = d.error || 'Incorrect access key. Please try again.';
+      err.classList.add('show');
+      inp.value = ''; inp.focus();
+      btn.classList.remove('loading'); btn.disabled = false;
+    }
+  } catch(e){
+    err.textContent = 'Connection error. Please try again.';
+    err.classList.add('show');
+    btn.classList.remove('loading'); btn.disabled = false;
+  }
+}
+
+// ── Desktop parallax (disabled on touch devices) ──
+const card = document.getElementById('card');
+const isTouch = window.matchMedia('(pointer: coarse)').matches;
+if(!isTouch){
+  document.addEventListener('mousemove', e => {
+    const dx = (e.clientX - window.innerWidth  / 2) / (window.innerWidth  / 2);
+    const dy = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
+    card.style.transform = `perspective(1000px) rotateY(${dx*3}deg) rotateX(${-dy*2.5}deg)`;
+  });
+  document.addEventListener('mouseleave', () => {
+    card.style.transition = 'transform .5s ease';
+    card.style.transform  = '';
+    setTimeout(() => card.style.transition = '', 500);
+  });
+}
+</script>
+</body>
+</html>
