@@ -4,12 +4,10 @@ module.exports = async (req, res) => {
   }
   const { path, params } = req.query;
   if (!path) return res.status(400).json({ error: 'Missing path' });
-
   const allowed = ['/genre/', '/trending/', '/movie/', '/tv/', '/search/', '/person/', '/discover/'];
   if (!allowed.some(p => path.startsWith(p))) {
     return res.status(403).json({ error: 'Path not allowed' });
   }
-
   try {
     const decoded = params ? decodeURIComponent(params) : '';
     const url = `https://api.themoviedb.org/3${path}?language=en-US${decoded ? '&' + decoded : ''}`;
